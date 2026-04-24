@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Cloud Forum | Dashboard</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="dashboard">
+ <main class="app-shell">
+  <header class="topbar">
+   <div>
+	<p class="eyebrow">Forum feed</p>
+	<h1 id="welcomeText">Welcome back</h1>
+	<p>Search campus posts, filter by topic, and keep track of resources and announcements.</p>
+   </div>
+   <div class="topbar__actions">
+	<button class="button" type="button" onclick="goToCreate()">New post</button>
+	<button class="button button--ghost" type="button" onclick="goToAdmin()" id="adminNavButton">Admin</button>
+	<button class="button button--ghost" type="button" onclick="logout()">Logout</button>
+   </div>
+  </header>
+
+  <section class="panel">
+   <div class="mini-stat-grid">
+	<article class="mini-stat">
+	 <span class="eyebrow">Workspace</span>
+	 <strong>Cloud computing forum</strong>
+	 <p>Built for class updates, project sharing, and collaboration.</p>
+	</article>
+	<article class="mini-stat">
+	 <span class="eyebrow">Posts</span>
+	 <strong id="feedSummary">Loading feed</strong>
+	 <p>Recent and pinned posts appear at the top.</p>
+	</article>
+	<article class="mini-stat">
+	 <span class="eyebrow">Access</span>
+	 <strong>Moderated</strong>
+	 <p>Only approved users can publish and comment.</p>
+	</article>
+   </div>
+
+   <div class="filter-grid">
+	<label>
+	 Search
+	 <input id="searchInput" type="search" placeholder="Search by title, author, category or tag" oninput="loadPosts(1)">
+	</label>
+	<label>
+	 Category
+	 <select id="categoryFilter" onchange="loadPosts(1)">
+	  <option value="">All categories</option>
+	  <option value="General">General</option>
+	  <option value="AWS">AWS</option>
+	  <option value="Cloud">Cloud</option>
+	  <option value="Docker">Docker</option>
+	  <option value="Kubernetes">Kubernetes</option>
+	  <option value="DevOps">DevOps</option>
+	  <option value="Project">Project</option>
+	  <option value="Placement">Placement</option>
+	  <option value="Resources">Resources</option>
+	 </select>
+	</label>
+	<label>
+	 Type
+	 <select id="typeFilter" onchange="loadPosts(1)">
+	  <option value="">All types</option>
+	  <option value="discussion">Discussion</option>
+	  <option value="question">Question</option>
+	  <option value="resource">Resource</option>
+	  <option value="announcement">Announcement</option>
+	  <option value="event">Event</option>
+	 </select>
+	</label>
+	<label style="align-self:end;">
+	 <span>Only my posts</span>
+	 <input id="mineFilter" type="checkbox" onchange="loadPosts(1)">
+	</label>
+   </div>
+  </section>
+
+  <section class="panel" style="margin-top:20px;">
+   <div class="section-head">
+	<div>
+	 <h2>Latest posts</h2>
+	 <p>Click a card to edit, vote, comment, or pin a discussion.</p>
+	</div>
+	<button class="button button--ghost" type="button" onclick="loadPosts(1)">Refresh</button>
+   </div>
+   <div id="posts" class="feed"></div>
+   <div id="pagination"></div>
+  </section>
+ </main>
+
+ <script src="config.js"></script>
+ <script src="script.js"></script>
+</body>
+</html>

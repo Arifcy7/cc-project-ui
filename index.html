@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Cloud Forum | Login</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="login">
+ <main class="shell">
+  <section class="hero">
+   <p class="eyebrow">Cloud Computing Forum</p>
+   <h1>Discuss ideas, share resources, and build campus momentum.</h1>
+   <p>This forum is designed for course collaboration, project updates, and resource sharing. It adds structured post types, pinned announcements, editable threads, and comment discussions.</p>
+
+   <div class="feature-grid">
+	<article class="feature-card">
+	 <strong>Structured posts</strong>
+	 <p>Questions, resources, announcements, and events stay organized by category.</p>
+	</article>
+	<article class="feature-card">
+	 <strong>Moderation-ready</strong>
+	 <p>Admins can approve users, pin posts, and manage the forum with one panel.</p>
+	</article>
+	<article class="feature-card">
+	 <strong>Searchable feed</strong>
+	 <p>Search by topic, filter by type, and jump straight to your own posts.</p>
+	</article>
+	<article class="feature-card">
+	 <strong>AWS-friendly</strong>
+	 <p>The app is ready for container hosting, static delivery, and managed secrets.</p>
+	</article>
+   </div>
+  </section>
+
+  <section class="auth-panel">
+   <p class="eyebrow">Sign in</p>
+   <h2>Access the forum</h2>
+   <form class="auth-form" onsubmit="login(event)">
+	<label>
+	 Moodle ID
+	 <input type="text" id="MID" placeholder="Enter 8-digit Moodle ID" inputmode="numeric" maxlength="8" required>
+	</label>
+	<label>
+	 Password
+	 <input type="password" id="password" placeholder="Password" required>
+	</label>
+	<button class="button button--block" type="submit">Login</button>
+   </form>
+   <p id="msg"></p>
+   <p class="auth-links">New here? <a href="register.html">Create an account</a></p>
+  </section>
+ </main>
+
+ <script src="config.js"></script>
+ <script src="script.js"></script>
+</body>
+</html>

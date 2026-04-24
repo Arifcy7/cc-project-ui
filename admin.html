@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Cloud Forum | Admin</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="admin">
+ <main class="app-shell">
+  <header class="topbar">
+   <div>
+    <p class="eyebrow">Administration</p>
+    <h1>Moderate users and keep the forum healthy</h1>
+    <p id="adminSummary">Loading admin dashboard</p>
+   </div>
+   <div class="topbar__actions">
+    <button class="button button--ghost" type="button" onclick="goToDashboard()">Back to feed</button>
+    <button class="button button--ghost" type="button" onclick="loadUsers()">Refresh users</button>
+    <button class="button button--ghost" type="button" onclick="logout()">Logout</button>
+   </div>
+  </header>
+
+  <section class="panel">
+   <div id="users" class="users-grid"></div>
+  </section>
+ </main>
+
+ <script src="config.js"></script>
+ <script src="script.js"></script>
+</body>
+</html>

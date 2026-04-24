@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Cloud Forum | Create Post</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="create">
+ <main class="app-shell">
+  <header class="topbar">
+   <div>
+	<p class="eyebrow">Compose</p>
+	<h1 id="composerOwner">Posting as member</h1>
+	<p>Create a structured forum post with a category, type, tags, and an optional resource link.</p>
+   </div>
+   <div class="topbar__actions">
+	<button class="button button--ghost" type="button" onclick="goToDashboard()">Back to feed</button>
+	<button class="button button--ghost" type="button" onclick="goToAdmin()" id="adminNavButton">Admin</button>
+	<button class="button button--ghost" type="button" onclick="logout()">Logout</button>
+   </div>
+  </header>
+
+  <section class="panel">
+   <form class="stack-form" onsubmit="createPost(event)">
+	<label>
+	 Title
+	 <input type="text" id="title" placeholder="Give the post a clear title" required>
+	</label>
+	<div class="grid grid--two">
+	 <label>
+	  Category
+	  <select id="category">
+	   <option value="General">General</option>
+	   <option value="AWS">AWS</option>
+	   <option value="Cloud">Cloud</option>
+	   <option value="Docker">Docker</option>
+	   <option value="Kubernetes">Kubernetes</option>
+	   <option value="DevOps">DevOps</option>
+	   <option value="Project">Project</option>
+	   <option value="Placement">Placement</option>
+	   <option value="Resources">Resources</option>
+	  </select>
+	 </label>
+	 <label>
+	  Post type
+	  <select id="postType">
+	   <option value="discussion">Discussion</option>
+	   <option value="question">Question</option>
+	   <option value="resource">Resource</option>
+	   <option value="announcement">Announcement</option>
+	   <option value="event">Event</option>
+	  </select>
+	 </label>
+	</div>
+	<label>
+	 Resource link
+	 <input type="url" id="link" placeholder="Optional https:// link to notes, repo or docs">
+	</label>
+	<label>
+	 Tags
+	 <input type="text" id="tags" placeholder="cloud, aws, project">
+	</label>
+	<label>
+	 Content
+	 <textarea id="content" rows="8" placeholder="Share the context, question or resource" required></textarea>
+	</label>
+	<div class="action-row">
+	 <button class="button" type="submit">Publish post</button>
+	 <button class="button button--ghost" type="button" onclick="goToDashboard()">Cancel</button>
+	</div>
+	<p class="message" id="msg"></p>
+   </form>
+  </section>
+ </main>
+
+ <script src="config.js"></script>
+ <script src="script.js"></script>
+</body>
+</html>

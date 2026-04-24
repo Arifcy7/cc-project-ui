@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Cloud Forum | Register</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="register">
+ <main class="shell">
+  <section class="hero">
+   <p class="eyebrow">Join the forum</p>
+   <h1>Sign up for a workspace built around your class.</h1>
+   <p>Registration is tied to your Moodle ID. After creating an account, an admin approves access so the feed stays clean and community focused.</p>
+
+   <div class="feature-grid">
+	<article class="feature-card">
+	 <strong>Campus identity</strong>
+	 <p>Accounts use the college email format derived from the Moodle ID.</p>
+	</article>
+	<article class="feature-card">
+	 <strong>Approval flow</strong>
+	 <p>Forum access is granted after moderation, which keeps the feed controlled.</p>
+	</article>
+   </div>
+  </section>
+
+  <section class="auth-panel">
+   <p class="eyebrow">Create account</p>
+   <h2>Register your profile</h2>
+   <form class="auth-form" onsubmit="register(event)">
+	<label>
+	 Full name
+	 <input type="text" id="name" placeholder="Your name" required>
+	</label>
+	<label>
+	 Moodle ID
+	 <input type="text" id="MID" placeholder="8-digit Moodle ID" inputmode="numeric" maxlength="8" required>
+	</label>
+	<label>
+	 Password
+	 <input type="password" id="password" placeholder="Choose a password" required>
+	</label>
+	<button class="button button--block" type="submit">Register</button>
+   </form>
+   <p id="msg"></p>
+   <p class="auth-links">Already have an account? <a href="index.html">Login</a></p>
+  </section>
+ </main>
+
+ <script src="config.js"></script>
+ <script src="script.js"></script>
+</body>
+</html>
